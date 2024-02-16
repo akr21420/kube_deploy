@@ -11,8 +11,8 @@ chmod 777 ./join_command.sh
 
 for node in "${WORKERS[@]}"
 do
-sshpass -p "Cohe\$1ty" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null join_command.sh  root@$node:/root
+sshpass -p "" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null join_command.sh  root@$node:/root
 sleep 5
-sshpass -p "Cohe\$1ty" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$node 'bash /root/join_command.sh'
+sshpass -p "" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$node 'bash /root/join_command.sh'
 sleep 30
 done
